@@ -1,0 +1,29 @@
+import java.util.List;
+import java.util.ArrayList;
+import java.util.stream.Collectors;
+
+public class SpecialGiftSelector {
+    public static void main(String[] args) {
+        
+        List<String> participantList = new ArrayList<>();
+        participantList.add("Ramesh");
+        participantList.add("Lakshmi");
+        participantList.add("Anitha");
+        participantList.add("Meena");
+        participantList.add("Ashwin");
+        participantList.add("Naveen");
+        participantList.add("Aravind");
+        participantList.add("Keerthi");
+        participantList.add("Abdul");
+        participantList.add("Deepa");
+
+        List<String> selectedForGift = participantList.stream()
+                .filter(person -> person.startsWith("A"))
+                .collect(Collectors.toList());
+
+        System.out.println("Participants receiving special gifts:");
+        for (String person : selectedForGift) {
+            System.out.println(person);
+        }
+    }
+}
